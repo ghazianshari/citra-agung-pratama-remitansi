@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-urbanist: var(--font-urbanist);
+
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  /* Primary Colors */
+  --color-primary: #163350;
+  --color-secondary: #4A5565;
+  --color-button: #B19D5C;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-urbanist);
+}
+
+.sleek-zoom-90 {
+  zoom: 0.9;
+}
+
+.sleek-zoom-80 {
+  zoom: 0.8;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+@layer utilities {
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+}
