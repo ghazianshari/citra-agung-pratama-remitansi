@@ -33,7 +33,7 @@ const Hero = () => {
             />
 
             <a href="#hubungi-kami">
-              <button className="text-(--color-secondary) mb-5 bg-(--color-button) hover:bg-button/90 font-semibold rounded-lg px-8 py-3.5 transition-all duration-200 w-[90%] mx-auto block">
+              <button className="text-white mb-5 bg-(--color-button) hover:bg-button/90 font-semibold rounded-lg px-8 py-3.5 transition-all duration-200 w-[90%] mx-auto block">
                 Hubungi Kami
               </button>
             </a>

@@ -18,10 +18,15 @@ const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const navItems = [
+  // --- LOGIC BARU: Penentuan Menu ---
+  const mainNavItems: NavItem[] = [
     { label: "Beranda", href: "/", isSection: true, target: "home" },
     { label: "Tentang Kami", href: "/tentang-kami", isSection: false },
     { label: "Layanan", href: "/", isSection: true, target: "layanan" },
+  ];
+
+  const legalNavItems: NavItem[] = [
+    { label: "Beranda", href: "/", isSection: true, target: "home" },
     {
       label: "Kebijakan Privasi",
       href: "/kebijakan-privasi",
@@ -38,6 +43,14 @@ const Navbar = () => {
       isSection: false,
     },
   ];
+
+  const isLegalPage = [
+    "/kebijakan-privasi",
+    "/ketentuan-layanan",
+    "/laporkan-kerentanan",
+  ].includes(pathname);
+  const displayItems = isLegalPage ? legalNavItems : mainNavItems;
+  // ----------------------------------
 
   useEffect(() => {
     const handleScroll = () => {
@@ -143,7 +156,7 @@ const Navbar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-9">
-              {navItems.map((item) => (
+              {displayItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
@@ -219,7 +232,7 @@ const Navbar = () => {
               </div>
 
               <ul className="space-y-5 font-semibold text-base text-(--color-secondary)">
-                {navItems.map((item) => (
+                {displayItems.map((item) => (
                   <li key={item.label}>
                     <Link
                       href={item.href}

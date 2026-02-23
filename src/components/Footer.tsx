@@ -78,7 +78,7 @@ export default function Footer() {
                 height={60}
                 src="/assets/capr-footer-logo.svg"
                 alt="CAPR Logo"
-                className="h-11 w-auto cursor-pointer"
+                className="h-11 w-auto cursor-pointer mb-4.5"
               />
             </Link>
             <p className="font-inter text-base font-light leading-relaxed opacity-90">
